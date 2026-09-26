@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Светлана Данилова - лендинги и сайты-визитки</title>
+  <meta name="description" content="Делаю лендинги и сайты-визитки для мастеров, небольших магазинов и экспертов. Сайт открывается на телефоне и ведёт клиента к одному действию: написать вам.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B45F0'/%3E%3Crect x='8' y='19' width='16' height='5' rx='2' fill='%23FFE45C'/%3E%3Crect x='8' y='8' width='16' height='8' rx='2' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@600;800&family=Golos+Text:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="logo" href="#top" aria-label="Светлана Данилова, в начало страницы">
+        <span class="logo-mark" aria-hidden="true"></span>Светлана Данилова
+      </a>
+      <nav class="nav" aria-label="Разделы">
+        <a href="#works">Работы</a>
+        <a href="#prices">Цены</a>
+        <a href="#method">Как работаю</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <a class="btn btn-sm" href="https://t.me/" data-tg>Написать</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Первый экран: оффер и конструктор, который собирает страницу на глазах -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <h1>Делаю лендинги и сайты-визитки, с которых пишут и звонят</h1>
+          <p class="lead">Для мастеров, небольших магазинов и экспертов. Сайт открывается на телефоне, коротко объясняет, что вы предлагаете, и ведёт клиента к одной кнопке: написать вам.</p>
+          <div class="hero-cta">
+            <a class="btn" href="https://t.me/" data-tg>Обсудить мой сайт</a>
+            <a class="link" href="#prices">Цены и сроки</a>
+          </div>
+          <p class="note">Первый разговор бесплатный: 20 минут в Telegram. Расскажете о деле, а я скажу, какой сайт нужен и сколько он стоит.</p>
+        </div>
+
+        <figure class="builder" aria-labelledby="builder-cap">
+          <figcaption id="builder-cap">Соберите свой сайт из блоков</figcaption>
+
+          <div class="chips" id="chips" role="group" aria-label="Блоки сайта">
+            <button type="button" class="chip is-locked" aria-pressed="true" disabled>Шапка</button>
+            <button type="button" class="chip is-locked" aria-pressed="true" disabled>Главный экран</button>
+            <button type="button" class="chip" data-block="services" aria-pressed="false">Услуги и цены</button>
+            <button type="button" class="chip" data-block="gallery" aria-pressed="false">Фото работ</button>
+            <button type="button" class="chip" data-block="reviews" aria-pressed="false">Отзывы</button>
+            <button type="button" class="chip" data-block="form" aria-pressed="false">Форма заявки</button>
+            <button type="button" class="chip" data-block="tg" aria-pressed="false">Кнопка в Telegram</button>
+            <button type="button" class="chip" data-block="map" aria-pressed="false">Карта и адрес</button>
+          </div>
+
+          <div class="win" aria-hidden="true">
+            <div class="win-bar"><i></i><i></i><i></i><span>vashe-delo.ru</span></div>
+            <div class="win-page">
+              <div class="blk blk-head"><b></b><span></span><span></span><span></span><em></em></div>
+              <div class="blk blk-hero"><h6></h6><h6></h6><p></p><em></em></div>
+              <div class="blk blk-services" data-b="services" hidden><div><u></u><u></u><s></s></div><div><u></u><u></u><s></s></div><div><u></u><u></u><s></s></div></div>
+              <div class="blk blk-gallery" data-b="gallery" hidden><i></i><i></i><i></i></div>
+              <div class="blk blk-reviews" data-b="reviews" hidden><span class="ava"></span><div><u></u><u></u><u></u></div></div>
+              <div class="blk blk-form" data-b="form" hidden><i></i><i></i><em></em></div>
+              <div class="blk blk-tg" data-b="tg" hidden><em>Написать в Telegram</em></div>
+              <div class="blk blk-map" data-b="map" hidden><span class="pin"></span><u></u><u></u></div>
+            </div>
+          </div>
+
+          <p class="verdict" id="verdict" role="status" aria-live="polite">
+            Получается: <b id="verdict-name">сайт-визитка</b><span id="verdict-price"></span>
+          </p>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Кто делает -->
+    <section class="sec" id="about" aria-labelledby="about-h">
+      <div class="wrap about-grid">
+        <figure class="about-photo">
+          <img class="photo" src="img/svetlana.jpg" width="640" height="800" alt="Светлана Данилова" loading="lazy">
+        </figure>
+        <div class="about-text">
+          <h2 id="about-h">Сайт нужен не ради сайта, а чтобы клиент написал</h2>
+          <p>Красивая страница, с которой не понятно, что делать дальше, заявок не приносит. Поэтому на каждом сайте одна главная кнопка, а всё остальное помогает человеку решиться на неё нажать.</p>
+          <p>Меня зовут Светлана. Я делаю сайты вместе с ИИ-ассистентом: он быстро собирает черновик, а я проверяю тексты, дизайн и то, как страница выглядит на телефоне и на компьютере. Показываю, как это устроено, на YouTube.</p>
+          <div class="social">
+            <a class="social-link" href="https://t.me/" data-tg><b>Написать в Telegram</b><span>Отвечаю в течение дня</span></a>
+            <a class="social-link" href="https://www.youtube.com/" data-yt><b>YouTube</b><span>Видео: от идеи до готового лендинга</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Работы -->
+    <section class="sec sec-tint" id="works" aria-labelledby="works-h">
+      <div class="wrap">
+        <h2 id="works-h">Примеры работ</h2>
+        <p class="sec-lead">Пока это демо-проекты: на них я отрабатываю приёмы. Ваш сайт станет следующим в этом ряду.</p>
+
+        <div class="works">
+          <article class="work">
+            <div class="work-shot"><img src="img/work-flowers.png" width="1200" height="750" alt="Первый экран сайта цветочного магазина" loading="lazy"></div>
+            <h3>Лендинг цветочного магазина</h3>
+            <p>Каталог букетов с ценами, контакты, отзывы и карта. Цены подтягиваются из Google Таблицы, поэтому владелец меняет их сам.</p>
+          </article>
+          <article class="work">
+            <div class="work-shot"><img src="img/work-ration.png" width="1200" height="750" alt="Первый экран сайта бренда сублимированной еды" loading="lazy"></div>
+            <h3>Сайт бренда сублимированной еды</h3>
+            <p>Продукция, состав, где купить. Светлая пастельная версия, собранная по фирменным цветам и шрифтам бренда.</p>
+          </article>
+          <article class="work work-empty">
+            <h3>Здесь может быть ваш сайт</h3>
+            <p>Расскажите о деле, и через несколько дней у вас будет страница, которую не стыдно показать клиентам.</p>
+            <a class="btn" href="https://t.me/" data-tg>Обсудить сайт</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Цены -->
+    <section class="sec" id="prices" aria-labelledby="prices-h">
+      <div class="wrap">
+        <h2 id="prices-h">Что делаю, за сколько и за какой срок</h2>
+        <p class="sec-lead">Цену и срок называю до старта, после бесплатного разговора. Ниже ориентиры.</p>
+
+        <!-- TODO Светлана: цены 5/8/12 тыс. выбраны как стартовые, при желании поменяйте. Конструктор вверху берёт цены отсюда (data-tier, data-from) -->
+        <div class="price-list">
+          <article class="price-row" data-tier="card" data-from="5 000">
+            <div class="pr-main">
+              <h3>Сайт-визитка</h3>
+              <p>Одна страница: кто вы, чем занимаетесь, цены и контакты. Адаптация под телефон, публикация в интернете.</p>
+              <p class="pr-for">Подойдёт, если клиентам нужно быстро найти вас и позвонить.</p>
+            </div>
+            <dl class="pr-facts">
+              <div><dt>Стоимость</dt><dd>от 5 000 ₽</dd></div>
+              <div><dt>Срок</dt><dd>1-2 дня</dd></div>
+            </dl>
+          </article>
+
+          <article class="price-row" data-tier="landing" data-from="8 000">
+            <div class="pr-main">
+              <h3>Лендинг под одну услугу</h3>
+              <p>Продающая страница: предложение, выгоды, фото работ, отзывы, ответы на вопросы и кнопка связи. Тексты пишу я.</p>
+              <p class="pr-for">Подойдёт, если вы запускаете рекламу или хотите продавать услугу через интернет.</p>
+            </div>
+            <dl class="pr-facts">
+              <div><dt>Стоимость</dt><dd>от 8 000 ₽</dd></div>
+              <div><dt>Срок</dt><dd>2-4 дня</dd></div>
+            </dl>
+          </article>
+
+          <article class="price-row price-row-main" data-tier="apply" data-from="12 000">
+            <div class="pr-main">
+              <h3>Лендинг с приёмом заявок</h3>
+              <p>Лендинг плюс форма: заявка сразу приходит вам в Telegram, а клиент получает ответ, что её приняли.</p>
+              <p class="pr-for">Подойдёт, если хотите, чтобы заявки не терялись и вы отвечали первыми.</p>
+            </div>
+            <dl class="pr-facts">
+              <div><dt>Стоимость</dt><dd>от 12 000 ₽</dd></div>
+              <div><dt>Срок</dt><dd>4-5 дней</dd></div>
+            </dl>
+          </article>
+
+          <article class="price-row price-row-free">
+            <div class="pr-main">
+              <h3>Разговор о вашем деле</h3>
+              <p>Обсуждаем, что вам нужно. Если сайт не нужен, так и скажу.</p>
+            </div>
+            <dl class="pr-facts">
+              <div><dt>Стоимость</dt><dd>бесплатно</dd></div>
+              <div><dt>Срок</dt><dd>20 минут</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <p class="after-note">Два круга правок после показа макета включены в цену. Домен и хостинг оплачиваете вы напрямую, я помогу выбрать и подключить.</p>
+      </div>
+    </section>
+
+    <!-- Метод: реальная последовательность, поэтому нумерация -->
+    <section class="sec sec-tint" id="method" aria-labelledby="method-h">
+      <div class="wrap">
+        <h2 id="method-h">От разговора до готового сайта</h2>
+        <ol class="steps">
+          <li>
+            <h3>Знакомимся</h3>
+            <p>20 минут в Telegram: чем вы занимаетесь, кто ваши клиенты, что они должны сделать на сайте.</p>
+          </li>
+          <li>
+            <h3>Показываю макет</h3>
+            <p>Пишу тексты и собираю первый вариант страницы. Вы смотрите его до того, как я всё довёрстываю.</p>
+          </li>
+          <li>
+            <h3>Дорабатываю и проверяю</h3>
+            <p>Вношу правки, проверяю на телефоне, планшете и компьютере, проверяю, что кнопки и форма работают.</p>
+          </li>
+          <li>
+            <h3>Публикую и передаю</h3>
+            <p>Сайт выходит в интернет по вашему адресу. Доступы и короткую инструкцию передаю вам, всё остаётся вашим.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Вопросы -->
+    <section class="sec" id="faq" aria-labelledby="faq-h">
+      <div class="wrap faq-wrap">
+        <h2 id="faq-h">Частые вопросы</h2>
+        <div class="faq">
+          <details>
+            <summary>Мне нужно разбираться в сайтах?</summary>
+            <p>Нет. От вас нужны рассказ о деле, фотографии и цены. Остальное делаю я и показываю, как всем пользоваться.</p>
+          </details>
+          <details>
+            <summary>Вы делаете сайты с помощью нейросети?</summary>
+            <p>Да, работаю с ИИ-ассистентом: он ускоряет черновик. Тексты, дизайн и проверку на разных экранах я делаю и контролирую сама, а сайт не выходит, пока я его не проверю.</p>
+          </details>
+          <details>
+            <summary>Кому принадлежит сайт?</summary>
+            <p>Вам. Файлы сайта, домен и хостинг оформляются на вас. Если захотите уйти к другому исполнителю, сайт останется у вас.</p>
+          </details>
+          <details>
+            <summary>Что, если мне не понравится макет?</summary>
+            <p>Вы видите макет до финальной доработки. Два круга правок входят в цену: поменяем тексты, цвета, порядок блоков.</p>
+          </details>
+          <details>
+            <summary>Сколько сайт стоит в месяц после запуска?</summary>
+            <p>Простой сайт можно разместить бесплатно. Платите только за домен, обычно несколько сотен рублей в год. Точную сумму назову на разговоре.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap contact-in">
+        <div class="contact-intro">
+          <h2 id="contact-h">Расскажите о своём деле</h2>
+          <p>Отвечаю в течение дня. Разговор бесплатный и ни к чему не обязывает.</p>
+          <p class="contact-alt">Удобнее написать самому?</p>
+          <div class="contact-links">
+            <a class="btn btn-light" href="https://t.me/" data-tg>Telegram</a>
+            <a class="btn-line" href="https://www.youtube.com/" data-yt>YouTube</a>
+          </div>
+        </div>
+
+        <!-- Адрес приёма заявок задаётся в main.js (CONFIG.webhook). Пока он пуст, форма подсказывает написать в Telegram -->
+        <form class="lead-form" id="lead-form" novalidate>
+          <div class="field">
+            <label for="f-name">Как к вам обращаться</label>
+            <input id="f-name" name="name" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="f-contact">Telegram или телефон</label>
+            <input id="f-contact" name="contact" type="text" autocomplete="tel" required placeholder="@username или +7">
+          </div>
+
+          <fieldset class="opts">
+            <legend>Что нужно</legend>
+            <label><input type="radio" name="service" value="Сайт-визитка"><span>Сайт-визитка</span></label>
+            <label><input type="radio" name="service" value="Лендинг"><span>Лендинг</span></label>
+            <label><input type="radio" name="service" value="Лендинг с приёмом заявок"><span>Лендинг с заявками</span></label>
+            <label><input type="radio" name="service" value="Пока не знаю"><span>Пока не знаю</span></label>
+          </fieldset>
+
+          <div class="field">
+            <label for="f-task">Коротко о деле <span class="opt">- можно пропустить</span></label>
+            <textarea id="f-task" name="task" rows="3"></textarea>
+          </div>
+
+          <!-- Ловушка для спам-ботов: люди это поле не видят -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Сайт</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- Согласие отдельной галочкой, не отмечено заранее (152-ФЗ) -->
+          <label class="agree">
+            <input type="checkbox" name="agree" id="f-agree" required>
+            <span>Соглашаюсь на <a href="politika.html#soglasie" target="_blank">обработку персональных данных</a> по <a href="politika.html" target="_blank">политике конфиденциальности</a></span>
+          </label>
+          <button class="btn btn-light" type="submit">Отправить заявку</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <!-- TODO Светлана: после регистрации самозанятости добавить ИНН и отдельную почту для сайта -->
+      <p>Светлана Данилова</p>
+      <div class="foot-links">
+        <a class="link" href="politika.html">Политика конфиденциальности</a>
+        <a class="link" href="https://t.me/" data-tg-channel>Telegram</a>
+        <a class="link" href="https://www.youtube.com/" data-yt>YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
