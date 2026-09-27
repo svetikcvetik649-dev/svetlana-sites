@@ -34,20 +34,38 @@ p { margin: 0; }
 .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 8px; z-index: 20; }
 .skip:focus { left: 8px; }
 
-/* Кнопки и ссылки */
-.btn {
+/* Кнопки и ссылки: тёплое дышащее свечение + блик, который пробегает при наведении */
+.btn, .btn-line {
+  position: relative; overflow: hidden; isolation: isolate;
   display: inline-flex; align-items: center; justify-content: center;
   padding: 14px 24px; border-radius: 999px; border: 0;
   background: var(--violet); color: #fff; text-decoration: none;
   font: 600 1rem/1.2 var(--font-body); cursor: pointer;
-  transition: background .2s, transform .2s;
+  transition: background .2s, transform .2s, box-shadow .2s;
+  animation: btn-glow 2.6s ease-in-out infinite;
 }
-.btn:hover { background: var(--violet-deep); transform: translateY(-1px); }
+.btn::after, .btn-line::after {
+  content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.6), transparent);
+  transform: skewX(-20deg); transition: left .6s ease; pointer-events: none;
+}
+.btn:hover, .btn-line:hover { animation-play-state: paused; }
+.btn:hover::after, .btn-line:hover::after { left: 130%; }
+.btn:hover { background: var(--violet-deep); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(91,69,240,.45); }
+@keyframes btn-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(91,69,240,.4), 0 6px 18px rgba(91,69,240,.2); }
+  50% { box-shadow: 0 0 0 9px rgba(91,69,240,0), 0 8px 24px rgba(91,69,240,.32); }
+}
 .btn-sm { padding: 10px 18px; font-size: .95rem; }
-.btn-light { background: #fff; color: var(--ink); }
-.btn-light:hover { background: var(--marker); }
-.btn-line { display: inline-flex; padding: 12px 22px; border: 2px solid rgba(255,255,255,.45); border-radius: 999px; color: #fff; text-decoration: none; font-weight: 600; transition: border-color .2s, background .2s; }
+.btn-light { background: #fff; color: var(--ink); animation: none; }
+.btn-light::after { background: linear-gradient(120deg, transparent, rgba(91,69,240,.3), transparent); }
+.btn-light:hover { background: var(--marker); box-shadow: 0 10px 24px rgba(255,228,92,.5); }
+.btn-line { padding: 12px 22px; border: 2px solid rgba(255,255,255,.45); animation: none; }
 .btn-line:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn-line { animation: none; }
+  .btn::after, .btn-line::after { transition: none; }
+}
 .link { font-weight: 600; text-decoration-thickness: 2px; text-underline-offset: 5px; text-decoration-color: var(--violet); }
 .link:hover { text-decoration-color: var(--ink); }
 
