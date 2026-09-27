@@ -2,7 +2,6 @@
 const CONFIG = {
   telegram: "https://t.me/Svetadan75",
   telegramChannel: "", // ссылка на Telegram-канал; пока канала нет, кнопки ведут на личный Telegram
-  youtube: "https://www.youtube.com/@%D0%A1%D0%B2%D0%B5%D1%82%D0%BB%D0%B0%D0%BD%D0%B0%D0%94%D0%B0%D0%BD%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0-%D1%811%D0%B5",
   webhook: "https://script.google.com/macros/s/AKfycbwan3bIMm3-wpxq0BQjVRjpiNuglQeolxW9MkRGnnFy9OfsFCzW3bY1ZlHuS_cxPFg/exec" // приёмник заявок: Google Apps Script, кладёт строку в таблицу "Заявки с сайта"
 };
 
@@ -10,8 +9,7 @@ const CONFIG = {
 (function fillLinks() {
   const map = [
     ["[data-tg]", CONFIG.telegram],
-    ["[data-tg-channel]", CONFIG.telegramChannel || CONFIG.telegram],
-    ["[data-yt]", CONFIG.youtube]
+    ["[data-tg-channel]", CONFIG.telegramChannel || CONFIG.telegram]
   ];
   map.forEach(([selector, url]) => {
     if (!url) return;
