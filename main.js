@@ -2,7 +2,7 @@
 const CONFIG = {
   telegram: "https://t.me/Svetadan75",
   phone: "79614871383", // номер телефона цифрами: включает кнопки «Позвонить», WhatsApp и строку с номером
-  maxLink: "", // ссылка на твой MAX, например https://max.ru/...: включает кнопку MAX
+  maxLink: "https://web.max.ru/71792530", // ссылка на твой MAX, например https://max.ru/...: включает кнопку MAX
   telegramChannel: "", // ссылка на Telegram-канал; пока канала нет, кнопки ведут на личный Telegram
   webhook: "https://script.google.com/macros/s/AKfycbwan3bIMm3-wpxq0BQjVRjpiNuglQeolxW9MkRGnnFy9OfsFCzW3bY1ZlHuS_cxPFg/exec" // приёмник заявок: Google Apps Script, кладёт строку в таблицу "Заявки с сайта"
 };
