@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /politika.html
+
+Sitemap: https://svetadan.ru/sitemap.xml

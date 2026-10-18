@@ -2,12 +2,11 @@
 const CONFIG = {
   telegram: "https://t.me/Svetadan75",
   phone: "79614871383", // номер телефона цифрами: включает кнопки «Позвонить», WhatsApp и строку с номером
-  maxLink: "https://web.max.ru/71792530", // ссылка на твой MAX, например https://max.ru/...: включает кнопку MAX
   telegramChannel: "", // ссылка на Telegram-канал; пока канала нет, кнопки ведут на личный Telegram
   webhook: "https://script.google.com/macros/s/AKfycbwan3bIMm3-wpxq0BQjVRjpiNuglQeolxW9MkRGnnFy9OfsFCzW3bY1ZlHuS_cxPFg/exec" // приёмник заявок: Google Apps Script, кладёт строку в таблицу "Заявки с сайта"
 };
 
-/* Кнопки связи: появляются, когда в настройках заполнены номер и ссылка на MAX */
+/* Кнопки связи: появляются, когда в настройках заполнен номер */
 (function contacts() {
   const digits = String(CONFIG.phone || "").replace(/\D/g, "");
   const show = (selector, href, text) => document.querySelectorAll(selector).forEach((el) => {
@@ -23,9 +22,7 @@ const CONFIG = {
     show("[data-phone-note]");
     show("[data-fab-phone]", "tel:+" + digits);
     show("[data-fab-wa]", "https://wa.me/" + digits);
-    show("[data-fab-max-note]", null, "MAX: найдите по номеру " + nice);
   }
-  if (CONFIG.maxLink) { show("[data-max]", CONFIG.maxLink); document.querySelectorAll("[data-fab-max-note]").forEach((el) => { el.hidden = true; }); show("[data-fab-max]", CONFIG.maxLink); }
 })();
 
 /* Плавающая кнопка «Связаться»: все способы связи в одном месте */
@@ -45,7 +42,7 @@ const CONFIG = {
   const rub = (n) => "от " + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " ₽";
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const niches = typeof TABS !== "undefined" ? TABS : [...new Set(WORKS.map((w) => w.niche))];
-  const FORMATS = ["Лайт", "Продающий", "Кино", "Свой дизайн"];
+  const FORMATS = ["Лайт", "Продающий", "Кино-эффект", "Свой дизайн"];
   const priceOf = (f) => (WORKS.find((w) => w.kind === f) || {}).price;
 
   /* числа в первом экране */
@@ -195,6 +192,8 @@ const CONFIG = {
 
     const data = Object.fromEntries(new FormData(form).entries());
     if (data.website) return; // сработала ловушка для ботов
+    if (data.site && data.site.trim()) { data.task = ((data.task || "").trim() + " | Текущий сайт: " + data.site.trim()).trim(); }
+    delete data.site;
 
     const missing = ["name", "contact"].filter((k) => !String(data[k] || "").trim());
     if (missing.length) {
