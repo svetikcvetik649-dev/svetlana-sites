@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /politika.html
+Disallow: /soglasie.html
 
 Sitemap: https://svetadan.ru/sitemap.xml
