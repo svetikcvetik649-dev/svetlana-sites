@@ -352,3 +352,17 @@ h1,h2,h3,.facts b,.price,.promo-badge,.addon-price,.steps li::before{font-varian
   .hero .btn,.fab-btn,.promo,.promo-badge,.price-row-main,.pill,.card::before,.addon::before,.lead-form::before,.promo-badge::before,.promo-badge::after{animation:none}
   .card,.addon{transition:none}
 }
+
+/* hero: картинки справа на широком экране */
+.hero-art{display:none}
+@media (min-width:980px){
+  .hero-text{position:relative}
+  .hero h1{max-width:19ch}
+  .hero-art{display:block;position:absolute;right:0;top:-6px;width:min(46%,540px);height:470px;pointer-events:none}
+  .ha{position:absolute;width:78%;height:auto;border-radius:14px;border:3px solid #fff;box-shadow:0 30px 60px -28px rgba(90,60,40,.55);animation:ha-float 9s ease-in-out infinite}
+  .ha-1{right:0;top:0;transform:rotate(3deg)}
+  .ha-2{left:0;top:150px;transform:rotate(-4deg);animation-delay:-3s}
+  .ha-3{right:6%;top:290px;transform:rotate(2deg);animation-delay:-6s}
+}
+@keyframes ha-float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@media (prefers-reduced-motion:reduce){.ha{animation:none}}
